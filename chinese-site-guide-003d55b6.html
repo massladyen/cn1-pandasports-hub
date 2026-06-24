@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 再次发现 · 轻量导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f9f6f0;
+            color: #2c2b28;
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 0 3rem;
+        }
+
+        /* ---- 顶部导航 ---- */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0 1.8rem;
+            border-bottom: 1px solid #e2ddd2;
+        }
+
+        .top-nav .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #3a3732;
+        }
+
+        .top-nav .logo span {
+            background: #d9d0c0;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 450;
+        }
+
+        .top-nav .nav-links a {
+            margin-left: 1.8rem;
+            text-decoration: none;
+            color: #5b554a;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .top-nav .nav-links a:hover {
+            border-bottom-color: #a09685;
+        }
+
+        /* ---- hero 区（精炼介绍） ---- */
+        .hero {
+            margin: 3rem 0 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.25;
+            max-width: 80%;
+            color: #2a2722;
+        }
+
+        .hero h1 strong {
+            font-weight: 550;
+            background: linear-gradient(120deg, #e9e0d0 0%, #e9e0d0 40%, transparent 60%);
+            padding: 0 0.2rem;
+        }
+
+        .hero .subtitle {
+            margin-top: 1.2rem;
+            font-size: 1.05rem;
+            color: #534e44;
+            max-width: 72%;
+            border-left: 3px solid #c7bcab;
+            padding-left: 1.2rem;
+        }
+
+        .hero .subtitle a {
+            color: #3f392f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #bab09d;
+        }
+
+        .hero .subtitle a:hover {
+            text-decoration-color: #6b6253;
+        }
+
+        /* ---- 三个场景模块（卡片式） ---- */
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 3.2rem 0 3rem;
+        }
+
+        .scene-card {
+            flex: 1 1 240px;
+            background: #ffffffea;
+            padding: 1.8rem 1.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(80,70,55,0.06);
+            border: 1px solid #ece7dd;
+            transition: box-shadow 0.15s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 8px 18px rgba(60,50,35,0.04);
+        }
+
+        .scene-card .emoji-badge {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.4rem;
+            color: #2e2b25;
+        }
+
+        .scene-card p {
+            font-size: 0.93rem;
+            color: #555046;
+            margin-top: 0.25rem;
+        }
+
+        /* ---- 提示 / 引用区块 ---- */
+        .notice-block {
+            background: #f0ece3;
+            border-left: 5px solid #b9ae99;
+            padding: 1.4rem 1.8rem;
+            margin: 2.4rem 0 2.8rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .notice-block p {
+            margin: 0.3rem 0;
+            font-size: 0.98rem;
+            color: #3d3930;
+        }
+
+        .notice-block .label {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.7rem;
+            color: #7c7260;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ---- FAQ 摘要（常见说明） ---- */
+        .faq-section {
+            margin: 2.8rem 0 1.8rem;
+        }
+
+        .faq-section h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.01em;
+            color: #2f2b24;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #e6dfd2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .question {
+            font-weight: 480;
+            color: #2e2a22;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .faq-item .question span {
+            color: #a79a84;
+            margin-right: 0.5rem;
+        }
+
+        .faq-item .answer {
+            margin-top: 0.2rem;
+            font-size: 0.92rem;
+            color: #5d564a;
+            padding-left: 1.3rem;
+        }
+
+        /* ---- 底部稳定链接区 ---- */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0d9cb;
+            font-size: 0.9rem;
+            color: #635c4e;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #3b352b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 680px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+
+            .top-nav .nav-links a {
+                margin-left: 0;
+                margin-right: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+                max-width: 100%;
+            }
+
+            .hero .subtitle {
+                max-width: 100%;
+                border-left-width: 2px;
+                padding-left: 0.9rem;
+            }
+
+            .scenes {
+                gap: 1.2rem;
+                flex-direction: column;
+            }
+
+            .scene-card {
+                flex: 1 1 auto;
+            }
+
+            .notice-block {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            body {
+                padding: 0 1rem;
+            }
+            .container {
+                padding: 1.5rem 0 2rem;
+            }
+            .hero h1 {
+                font-size: 1.45rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <div class="logo"><span>◈</span> 再次访问</div>
+        <div class="nav-links">
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+            <a href="#">收藏</a>
+        </div>
+    </nav>
+
+    <!-- hero 区：从再次访问 & 收藏切入 -->
+    <div class="hero">
+        <h1>
+            你之前来过。<br>
+            这里是 <strong>爱游戏</strong> —— 轻量、安静、常驻。
+        </h1>
+        <div class="subtitle">
+            每次回来都能看到熟悉的入口，无需重复寻找。保持浏览器书签，或直接记住
+            <a href="https://chinese-site-igame.com">爱游戏</a>，
+            即可在需要时回到这个简洁的信息聚合点。
+        </div>
+    </div>
+
+    <!-- 三个场景模块（再次访问、收藏、持续关注） -->
+    <div class="scenes">
+        <div class="scene-card">
+            <div class="emoji-badge">↩️</div>
+            <h3>再次访问</h3>
+            <p>关闭页面后，通过历史记录或直接输入名称即可返回。页面结构保持稳定，核心入口始终在相同位置。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-badge">🔖</div>
+            <h3>收藏锚点</h3>
+            <p>将链接添加至书签栏，或存放在个人收藏夹。下次只需一次点击，不必重新搜索或记忆复杂网址。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-badge">📡</div>
+            <h3>持续关注</h3>
+            <p>如果你希望了解后续更新或内容调整，可定期返回。本页不设推送，完全由你决定访问节奏。</p>
+        </div>
+    </div>
+
+    <!-- 提示引用块（常见说明） -->
+    <div class="notice-block">
+        <div class="label">📌 提示</div>
+        <p>本页为轻量导航介绍，并非完整平台。所有指向 <a href="https://chinese-site-igame.com">爱游戏</a> 的链接均使用直接跳转，不经过中间页或追踪参数。你看到的每个模块都只承载信息，不收集个人数据。</p>
+        <p style="margin-top: 0.6rem;">页面配色偏暖米白，适合长时间阅读；引用块及卡片用于区分内容层次，无多余装饰。</p>
+    </div>
+
+    <!-- FAQ 摘要：常见说明（4条） -->
+    <div class="faq-section">
+        <h2>常见说明 · 摘要</h2>
+        <div class="faq-item">
+            <div class="question"><span>Q1</span> 这个页面和主站的关系？</div>
+            <div class="answer">本页是介绍性质的独立页面，主站功能与内容请直接访问 <a href="https://chinese-site-igame.com">爱游戏</a>。本页不替代主站任何服务。</div>
+        </div>
+        <div class="faq-item">
+            <div class="question"><span>Q2</span> 如何确保下次还能找到？</div>
+            <div class="answer">推荐将当前网址加入浏览器书签（快捷键 Ctrl+D 或 Cmd+D）。也可记住站点名称，通过搜索引擎再次定位。</div>
+        </div>
+        <div class="faq-item">
+            <div class="question"><span>Q3</span> 页面会频繁变化吗？</div>
+            <div class="answer">本页结构保持基本稳定，顶部导航、场景模块、说明区块不进行大幅度改动。内容微调时会保留主要入口链接。</div>
+        </div>
+        <div class="faq-item">
+            <div class="question"><span>Q4</span> 是否有其他推荐操作？</div>
+            <div class="answer">如果你觉得页面有用，可以截图保存或复制链接分享。无须注册或登录，即可完整浏览所有信息。</div>
+        </div>
+    </div>
+
+    <!-- 底部稳定链接 -->
+    <div class="footer-note">
+        <a href="https://chinese-site-igame.com">爱游戏</a> · 导航常驻 · 不追踪
+    </div>
+
+</div>
+</body>
+</html>

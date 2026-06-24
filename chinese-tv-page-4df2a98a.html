@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 持续关注中文电视游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2rem 1.25rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+            padding: 3rem 2rem;
+        }
+
+        @media (max-width: 500px) {
+            body { padding: 1rem 0.75rem; }
+            .page { padding: 2rem 1.25rem; }
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            background: #eef4ff;
+            padding: 0.1rem 0.4rem;
+            border-radius: 8px;
+            color: #1f3a6b;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 580px;
+            margin-top: 0.4rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #f0f0f0;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            letter-spacing: 0.3px;
+        }
+
+        /* 通用章节 */
+        section {
+            margin: 2.8rem 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.6rem 0;
+            color: #2a2a2a;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2e2e2e;
+        }
+
+        .text-muted {
+            color: #6b6b6b;
+            font-size: 0.95rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 500px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #f7f9fc;
+            padding: 1.2rem 1.1rem;
+            border-radius: 18px;
+            transition: background 0.2s;
+        }
+
+        .card strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .card p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #3e3e3e;
+        }
+
+        .faq-item {
+            margin: 1.4rem 0;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #4a4a4a;
+            padding-left: 0.2rem;
+            border-left: 3px solid #d0dae8;
+            padding-left: 0.8rem;
+        }
+
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #eaeaea;
+            font-size: 0.9rem;
+            color: #5a5a5a;
+        }
+
+        .footer-links a {
+            color: #1f3a6b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #1f3a6b;
+        }
+
+        .inline-link {
+            color: #1f3a6b;
+            text-decoration: none;
+            border-bottom: 1px solid #bcc8dc;
+            transition: border 0.15s, background 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #1f3a6b;
+            background: #f2f6ff;
+        }
+
+        .small-note {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: #7a7a7a;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ececec;
+            margin: 1.6rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>再次来到 <span>爱游戏</span> 的页面</h1>
+        <p>如果你曾收藏过这里，或只是偶然路过又回头寻找——这个站点关于中文电视上的游戏内容，持续整理，没有花哨。</p>
+        <span class="badge">常回来看看 · 内容缓慢更新</span>
+    </div>
+
+    <!-- 优势区: 收藏/回访场景 -->
+    <section>
+        <h2>为什么值得再次打开</h2>
+        <div class="card-grid">
+            <div class="card">
+                <strong>📌 收藏过的线索</strong>
+                <p>也许你上次看了一半的游戏介绍，或者想回顾某个电视游戏的操控方式。这里依然保留着清晰的分类。</p>
+            </div>
+            <div class="card">
+                <strong>🔁 持续关注的理由</strong>
+                <p>电视上的中文游戏内容并不泛滥，偶尔的更新、补充说明，都值得回来扫一眼。</p>
+            </div>
+            <div class="card">
+                <strong>📋 不是资讯流</strong>
+                <p>没有弹窗、没有排行榜焦虑，只有一页一页写好的说明。适合需要安静查阅的人。</p>
+            </div>
+            <div class="card">
+                <strong>🧩 跨设备可用</strong>
+                <p>无论手机、平板还是电脑，页面都保持窄宽度的舒适阅读，不必放大缩小。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区: 内容侧重说明 -->
+    <section>
+        <h2>这个页面整理了什么</h2>
+        <p>“<a href="https://chinese-tv-igame.com" class="inline-link">爱游戏</a>”这个站点，主要围绕中文环境下电视端可运行的游戏，做功能、场景和基础问题的梳理。没有评测式的华丽语言，但力求每一条信息都经过核实。</p>
+        <p>如果你喜欢在电视上玩一些经典的中文游戏，或者想了解某款游戏在电视上的实际表现，这里的说明或许能帮你省下一些搜索时间。</p>
+        <p>内容更新并不频繁，因为电视游戏本身就是一个节奏较慢的领域。但每次改动都会让说明更准确一点。</p>
+    </section>
+
+    <!-- 场景小提示 -->
+    <section>
+        <h3>一些你可能遇到的情况</h3>
+        <p><strong>再次访问时找不到之前的页面？</strong> 这个站点结构一直保持简单，没有深层嵌套。记住“<a href="https://chinese-tv-igame.com" class="inline-link">爱游戏</a>”这个地址就好，所有内容都在首页可以索引。</p>
+        <p><strong>想推荐给朋友？</strong> 直接发链接即可，不需要注册或下载任何东西。打开就是正文。</p>
+        <p><strong>内容会不会突然消失？</strong> 只要站点在，页面就会继续保留。偶尔会修正过时的信息，但不会随意删除整篇内容。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>常见疑惑摘要</h2>
+        <div class="faq-item">
+            <div class="q">Q: 这里的游戏需要额外购买设备吗？</div>
+            <div class="a">A: 大部分内容基于普通电视或电视盒子，具体看每篇说明中的硬件要求。不会有意外推荐。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q: 页面里的链接安全吗？</div>
+            <div class="a">A: 所有外部链接均指向正规渠道或官方来源。如果发现链接失效，可以记住“<a href="https://chinese-tv-igame.com" class="inline-link">爱游戏</a>”并稍后再试。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q: 为什么更新很慢？</div>
+            <div class="a">A: 因为电视游戏的中文资料本身零散，整理需要时间。宁愿慢一点，也不想放未确认的信息。</div>
+        </div>
+        <div class="small-note">更多问题可以浏览页面底部的帮助类目（如果有）。</div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p>如果你觉得这里的内容有帮助，可以把 <a href="https://chinese-tv-igame.com">爱游戏</a> 加入书签。本站没有邮件订阅，也没有社交账号，唯一的方式就是记住这个网址。</p>
+        <p style="margin-top: 1rem;">其他相关页面：<span style="opacity:0.6;">（暂时只有首页）</span></p>
+        <p style="margin-top:1.2rem; font-size:0.8rem; color:#888;">—— 保持简单，持续关注中文电视游戏 · 2025</p>
+    </div>
+
+</div>
+</body>
+</html>

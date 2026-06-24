@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 清晰入口与说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f9fc;
+      color: #1d2c3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉 – 网格卡片氛围 */
+    .hero {
+      background: linear-gradient(145deg, #d7edf5 0%, #b7dce8 100%);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      margin-bottom: 2.8rem;
+      text-align: center;
+      box-shadow: 0 12px 28px -8px rgba(42, 128, 142, 0.18);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0d3b44;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #1f4f5c;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #0e5665;
+      margin-top: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* 网格卡片 — 蓝绿色点缀 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.6rem;
+      margin: 2.4rem 0 2rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.4rem;
+      padding: 1.8rem 1.4rem;
+      box-shadow: 0 6px 14px rgba(0, 60, 70, 0.06);
+      border-left: 4px solid #2d9ca8;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 24px -8px rgba(37, 118, 128, 0.12);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #11525e;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "▹";
+      color: #2d9ca8;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2c4450;
+      margin-bottom: 0.2rem;
+    }
+
+    .card .info-tag {
+      display: inline-block;
+      background: #e2f0f4;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #135e6b;
+      margin-top: 0.8rem;
+    }
+
+    /* 自然链接段落 */
+    .link-paragraph {
+      background: #ffffff;
+      padding: 2rem 2.2rem;
+      border-radius: 2rem;
+      margin: 2.2rem 0 2.8rem 0;
+      box-shadow: 0 4px 12px rgba(0, 60, 70, 0.04);
+      border: 1px solid #d0e5ec;
+    }
+
+    .link-paragraph p {
+      font-size: 1.05rem;
+      color: #1d3d47;
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+
+    .link-paragraph a {
+      color: #127482;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #8fcbd6;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-paragraph a:hover {
+      border-bottom-color: #0c5d69;
+      color: #094e59;
+    }
+
+    .faq-mini {
+      background: #ecf5f8;
+      border-radius: 1.6rem;
+      padding: 1.8rem 2rem;
+      margin: 2.4rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      flex: 1 1 180px;
+    }
+
+    .faq-item .q {
+      font-weight: 550;
+      color: #0d4c58;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #2b5764;
+    }
+
+    .note-box {
+      background: #d9ecf2;
+      border-radius: 1.4rem;
+      padding: 1.4rem 2rem;
+      margin: 2rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-left: 6px solid #2a9caa;
+    }
+
+    .note-box span {
+      font-size: 1rem;
+      color: #0b4956;
+    }
+
+    .note-box .badge {
+      background: #ffffffcc;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.85rem;
+      color: #10626e;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #53737e;
+      padding: 2rem 0 0.4rem 0;
+      border-top: 1px solid #c9dce5;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .link-paragraph {
+        padding: 1.6rem 1.2rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+      .faq-mini {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+      <h1>稳定、清晰的起点</h1>
+      <p>信息卡片式说明页 · 从入口到用途，帮你快速了解爱游戏</p>
+      <div class="tagline">蓝绿色点缀 · 网格卡片</div>
+    </div>
+
+    <!-- 用途卡片 + 适合人群卡片 (混合网格) -->
+    <div class="grid-cards">
+      <div class="card">
+        <h3>了解体育动态</h3>
+        <p>聚合赛事资讯与项目介绍，适合日常浏览体育相关内容，保持信息同步。</p>
+        <span class="info-tag">信息参考</span>
+      </div>
+      <div class="card">
+        <h3>适合人群</h3>
+        <p>体育爱好者、休闲浏览者、想系统了解体育项目规则的入门用户均可使用。</p>
+        <span class="info-tag">广泛适用</span>
+      </div>
+      <div class="card">
+        <h3>页面引导</h3>
+        <p>以清晰分类和卡片结构呈现，方便快速定位感兴趣的主题，减少寻找成本。</p>
+        <span class="info-tag">结构友好</span>
+      </div>
+      <div class="card">
+        <h3>稳定访问</h3>
+        <p>作为长期入口，页面保持轻量简洁，适配移动端与桌面，打开流畅。</p>
+        <span class="info-tag">响应式设计</span>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 (嵌入「爱游戏」a 标签) -->
+    <div class="link-paragraph">
+      <p>如果你在寻找一个汇总体育资讯、项目规则和动态内容的网站，<a href="https://chinese-sports-igame.com">爱游戏</a>可以作为稳定的参考入口。页面以信息卡片为主，方便直接浏览不同板块，整体风格偏向清晰和实用。</p>
+      <p>无论是日常查询体育项目，还是想系统了解某个运动，从这个页面出发都比较直接。内容组织围绕用途和场景展开，没有多余装饰，适合快速浏览。</p>
+    </div>
+
+    <!-- FAQ 摘要 (简短问答式) -->
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="q">爱游戏主要提供什么？</div>
+        <div class="a">体育资讯、项目介绍、相关动态等内容聚合。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">适合哪些人使用？</div>
+        <div class="a">对体育感兴趣的用户，以及想快速了解体育信息的浏览者。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">页面结构有什么特点？</div>
+        <div class="a">卡片式布局，类别清晰，移动端与桌面均适配。</div>
+      </div>
+    </div>
+
+    <!-- 提示 / 场景说明 -->
+    <div class="note-box">
+      <span>🧭 使用建议：</span>
+      <span>可直接从上方卡片或链接进入对应板块，页面长期维护，内容保持平稳更新。</span>
+      <span class="badge">移动端友好</span>
+    </div>
+
+    <div class="footer-note">
+      爱游戏 · 信息卡片式介绍 ｜ 内容仅供说明参考
+    </div>
+
+  </div>
+</body>
+</html>
